@@ -25,7 +25,7 @@
 
 ## 🔐 API Keys & Environment Setup
 
-The application uses external APIs (Azure, Anthropic, Mistral, Gemini). Store your API keys in a `.env` file at the root of the project.
+The application uses external APIs (Azure, Mistral, Gemini). Store your API keys in a `.env` file at the root of the project.
 
 ### Example `.env`:
 
@@ -36,6 +36,29 @@ AZURE_DOCU_KEY="Your Azure Document Intelligence Key"
 AZURE_DOCU_URL="Your Azure Document Intelligence URL endpoint"
 MISTRAL_API_KEY="Your Mistral key"
 ```
+
+### Setting up Azure Document Intelligence
+
+1. **Create an Azure Account**: If you don't have one, sign up at [Azure Portal](https://portal.azure.com)
+
+2. **Create a Document Intelligence Resource**:
+   - Navigate to "Create a resource" in the Azure Portal
+   - Search for "Document Intelligence" and select it
+   - Click "Create"
+   - Fill in the required details (subscription, resource group, region, name)
+   - Select a pricing tier (Free tier is available for development)
+   - Click "Review + create" and then "Create"
+
+3. **Get API Credentials**:
+   - Once your resource is created, go to the resource
+   - Navigate to "Keys and Endpoint" in the left menu
+   - Copy "Key 1" to use as your `AZURE_DOCU_KEY`
+   - Copy the "Endpoint" URL to use as your `AZURE_DOCU_URL`
+
+4. **Add to Environment Variables**:
+   - Add these values to your `.env` file as shown above
+
+The application will automatically use Azure Document Intelligence for OCR when processing uploaded documents, providing higher accuracy text extraction than traditional OCR methods.
 
 ---
 
