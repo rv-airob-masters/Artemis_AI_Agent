@@ -498,7 +498,7 @@ def main():
     if "analysis_results" not in st.session_state:
         st.session_state.analysis_results = None
         
-    db_path = "db/med_reference_ranges.db"
+    db_path = "../db/med_reference_ranges.db"
     reference_ranges_df = load_reference_ranges_from_db(db_path)
 
     if not reference_ranges_df.empty:
